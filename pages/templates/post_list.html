@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
+ <h1>Posts ({{ posts.count }})</h1>
+ {% if messages %}
+ <ul>
+     {% for message in messages %}
+         <li> {{ message }} </li>
+         {% endfor %}
+ </ul>
+ {% endif %}
+ <hr>
+ <ul>
+ {% for post in posts %}
+    <li>
+        <a href="{% url 'post_detail' post.slug %}">{{ post.title }}</a>
+    </li>
+    </article>
+ {% empty %}
+    <p>No post yet.</p>
+ {% endfor %}
+</ul>
+{% endblock %}

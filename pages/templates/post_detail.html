@@ -1,0 +1,26 @@
+<h1>{{ post.title }}</h1>
+<p>{{ post.body }}</p>
+
+<hr>
+
+<h2>Comments</h2>
+{% if comments %}
+  {% for comment in comments %}
+    <div class="comment mb-3">
+      <strong>{{ comment.author }}</strong>
+      <small class="text-muted"> - {{ comment.created_at|date:"M d, Y H:i" }}</small>
+      <p>{{ comment.text }}</p>
+    </div>
+  {% endfor %}
+{% else %}
+  <p>No comments yet.</p>
+{% endif %}
+
+<hr>
+
+<h3>Add a comment</h3>
+<form method="POST">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit" class="btn btn-primary">Post comment</button>
+</form>

@@ -1,0 +1,16 @@
+body { font-family: system-ui, Arial, sans-serif; margin: 2rem; }
+nav a { margin-right: .75rem; text-decoration: none; }
+h1 { margin: 0 0 1rem; }
+
+.form-row { margin-bottom: 1rem; }
+.form-row.has-error input,
+.form-row.has-error textarea {
+  border: 1px solid #d33;    /* red border for errors */
+  box-shadow: 0 0 0 2px rgba(255,0,0,0.05);
+}
+.error {
+  color: #a00;
+  font-size: 0.95rem;
+  margin-top: 0.25rem;
+}
+.form-errors { border-left: 4px solid #d33; padding-left: .75rem; margin-bottom: 1rem; }

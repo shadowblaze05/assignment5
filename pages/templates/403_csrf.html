@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>Invalid request (CSRF)</h1>
+  <p>We couldn't verify your request. Please try again from the form on the post page.</p>
+  <p>If you followed a link, try copying the URL into your browser or visit the site home page.</p>
+  <p><a href="{% url 'post_list' %}">Back to blog</a></p>
+{% endblock %}

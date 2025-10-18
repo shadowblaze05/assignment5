@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %} {{ form.instance.pk|yesno:"Edit Post, Create New Post" }} </h1>
+{% endblock title %}
+{% block content %}
+    <h1> {{ form.instance.pk|yesno:"Edit Post, Create New Post" }} </h1>
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li> {{ message }} </li>
+                {% endfor %}
+        </ul>
+        {% endif %}
+        <hr>
+        <h1> {{ form.instance.pk|yesno:"Edit Post, Create New Post" }} </h1>
+
+    <form method ="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">{{ form.instance.pk|yesno:"Update, Save"}}
+        </button>
+    </form>
+{% endblock content%}
